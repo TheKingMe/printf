@@ -4,7 +4,14 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <string.h>
 
 int _printf(const char *format, ...);
 
+typedef struct print
+{
+	char* character;
+	int (*ptr) ();
+
+}print;
 #endif
