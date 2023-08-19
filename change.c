@@ -18,5 +18,5 @@ int (*change(char s))(va_list)
 			return (specific[i].ptr);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
