@@ -12,10 +12,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 	if (format == NULL)
-	{
-		perror("error");
 		return (-1);
-	}
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -28,10 +25,13 @@ int _printf(const char *format, ...)
 			else
 			{
 				int (*func)(va_list);
+				va_list args_copy;
 
+				va_copy(args_copy, args);
 				func = change(format[i + 1]);
 				if (func)
 					count += func(args);
+				va_end(args_copy);
 				i++;
 			}
 		}
