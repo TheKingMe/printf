@@ -12,7 +12,10 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 	if (format == NULL)
+	{
+		perror("error");
 		return (-1);
+	}
 	while (format[i])
 	{
 		if (format[i] == '%')
