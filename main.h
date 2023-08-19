@@ -15,4 +15,7 @@ typedef struct func
 
 }fc;
 int _putchar(char c);
+int rp_char(va_list args);
+int rp_string(va_list args);
+int (*change(char s))(va_list);
 #endif
