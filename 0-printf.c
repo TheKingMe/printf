@@ -17,16 +17,24 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			int (*func)(va_list);
+			if (format[i + 1] == '%')
+			{
+				_putchar('%');
+				i++;
+			}
+			else
+			{
+				int (*func)(va_list);
 
-			func = change(format[i + 1]);
-			if (func)
-				count += func(args);
-			i++;
+				func = change(format[i + 1]);
+				if (func)
+					count += func(args);
+				i++;
+			}
 		}
 		else
 		{
-			putchar(format[i]);
+			_putchar(format[i]);
 			count++;
 		}
 		i++;
