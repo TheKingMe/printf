@@ -7,24 +7,30 @@
 int _printf(const char *format, ...)
 {
 	int i = 0;
+	int count = 0;
 	va_list args;
 
 	va_start(args, format);
-
+	if (format == NULL)
+		return (-1);
 	while (format[i])
 	{
-		if (format[i] == '%' && format[i + 1] == '%')
+		if (format[i] == '%')
 		{
-			putchar('%');
+			int (*func)(va_list);
+
+			func = change(format[i + 1]);
+			if (func)
+				count += func(args);
+			i++;
 		}
-		
+		else
+		{
+			putchar(format[i]);
+			count++;
+		}
+		i++;
 	}
-	
 	va_end(args);
-	return 0;
-}
-int main()
-{
-	_printf("%%");
-	return 0;
+	return (count);
 }

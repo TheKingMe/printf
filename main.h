@@ -8,10 +8,11 @@
 
 int _printf(const char *format, ...);
 
-typedef struct print
+typedef struct func
 {
-	char* character;
-	int (*ptr) ();
+	char* c;
+	int (*ptr) (va_list);
 
-}print;
+}fc;
+int _putchar(char c);
 #endif
