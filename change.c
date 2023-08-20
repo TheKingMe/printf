@@ -14,7 +14,7 @@ int (*change(char s))(va_list)
 
 	while (specific[i].c)
 	{
-		if (strcmp(specific[i].c, &s) == 0)
+		if (*(specific[i].c) == s)
 			return (specific[i].ptr);
 		i++;
 	}

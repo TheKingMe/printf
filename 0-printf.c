@@ -6,8 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	int count = 0;
+	int i = 0, count = 0;
 	va_list args;
 
 	va_start(args, format);
@@ -17,11 +16,10 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+			if (format[i + 1] == '\0')
+				return (-1);
 			if (format[i + 1] == '%')
-			{
-				_putchar('%');
-				i++;
-			}
+				_putchar('%'), i++;
 			else
 			{
 				int (*func)(va_list);
@@ -31,15 +29,14 @@ int _printf(const char *format, ...)
 				func = change(format[i + 1]);
 				if (func)
 					count += func(args);
+				else
+					return (-1);
 				va_end(args_copy);
 				i++;
 			}
 		}
 		else
-		{
-			_putchar(format[i]);
-			count++;
-		}
+			_putchar(format[i]), count++;
 		i++;
 	}
 	va_end(args);
