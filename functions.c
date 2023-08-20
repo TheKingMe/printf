@@ -38,6 +38,11 @@ int rp_string(va_list args)
 	}
 	return (count);
 }
+/**
+*rp_int - for numbers
+*@args: arg
+*Return: count
+*/
 int rp_int(va_list args)
 {
 int d = 1, i, r, count = 0;
