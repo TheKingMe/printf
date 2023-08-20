@@ -6,40 +6,72 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, count = 0;
-	va_list args;
+    int i = 0;
+    int j;
+    int count = 0;
+    va_list args;
 
-	va_start(args, format);
-	if (format == NULL)
-		return (-1);
-	while (format[i])
-	{
-		if (format[i] == '%')
-		{
-			if (format[i + 1] == '\0')
-				return (-1);
-			if (format[i + 1] == '%')
-				_write('%'), i++;
-			else
-			{
-				int (*func)(va_list);
-				va_list args_copy;
+    va_start(args, format);
+    if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+        return (-1);
+    while (format[i])
+    {
+        if (format[i] != '%')
+        {
+       _write(format[i]);
+       i++;
+            count++;
+            continue;
+        }
+        if (format[i + 1] == '%')
+        {
+            _write('%');
+            count++;
+            i+=2;
+            continue;
+        }
+        if (format[i + 1] == '\0')
+            return (-1);
+         j = change(format[i + 1], args);
+        if (j == -1 || j != 0)
+            i++;
+        if (j > 0)
+            count += j;
 
-				va_copy(args_copy, args);
-				func = change(format[i + 1]);
-				if (func)
-					count += func(args);
-				else
-					_write(format[i]), _write(format[i + 1]);
-				va_end(args_copy);
-				i++;
-			}
-		}
-		else
-			_write(format[i]), count++;
-		i++;
-	}
-	va_end(args);
-	return (count);
+        if (j == 0)
+        {
+            _write('%');
+            count++;
+        }
+        i++;
+    }
+        /*
+        if (format[i] == '%')
+        {
+            if (format[i + 1] == '%')
+            {
+                _write('%');
+            }
+            else
+            {
+                int (*func)(va_list);
+                va_list args_copy;
+                va_copy(args_copy, args);
+                func = change(format[i + 1]);
+                if (func)
+                    count += func(args);
+                va_end(args_copy);
+            }
+            i++;
+        }
+        else
+        {
+            _write(format[i]);
+            count++;
+        }
+        i++;
+    }
+    */
+    va_end(args);
+    return (count);
 }
-

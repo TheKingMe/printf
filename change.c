@@ -4,7 +4,7 @@
  *@s: string
  *Return: Null
  */
-int (*change(char s))(va_list)
+int change(char s, va_list args)
 {
 	fc specific[] = {
 		{"c", rp_char},
@@ -16,9 +16,9 @@ int (*change(char s))(va_list)
 
 	while (specific[i].c)
 	{
-		if (*(specific[i].c) == s)
-			return (specific[i].ptr);
+		if (specific[i].c[0] == s)
+			return (specific[i].ptr(args));
 		i++;
-	}
+	}											
 	return (0);
 }
