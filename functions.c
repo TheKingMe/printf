@@ -38,3 +38,24 @@ int rp_string(va_list args)
 	}
 	return (count);
 }
+int rp_int(va_list args)
+{
+int d = 1, i, r, count = 0;
+int n = va_arg(args, int);
+if (n < 0)
+{
+	_putchar('-');
+	count++;
+	n *= -1;
+}
+
+for (i = 0; n / d > 9; i++, d *= 10)
+;
+
+for (; d >= 1; n %= d, d /= 10, count++)
+{
+	r = n / d;
+	_putchar('0' + r);
+}
+return (count);
+}

@@ -9,6 +9,8 @@ int (*change(char s))(va_list)
 	fc specific[] = {
 		{"c", rp_char},
 		{"s", rp_string},
+		{"d", rp_int},
+		{"i", rp_int},
 		{NULL, NULL}};
 	int i = 0;
 
