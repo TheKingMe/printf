@@ -25,6 +25,11 @@ int rp_string(va_list args)
 	char *str;
 
 	str = va_arg(args, char *);
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (*str != 0)
 	{
 		_putchar(*str);
