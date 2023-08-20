@@ -2,6 +2,7 @@
 /**
  *change - Change function
  *@s: string
+ *@args: args
  *Return: Null
  */
 int change(char s, va_list args)
@@ -19,6 +20,6 @@ int change(char s, va_list args)
 		if (specific[i].c[0] == s)
 			return (specific[i].ptr(args));
 		i++;
-	}											
+	}
 	return (0);
 }
