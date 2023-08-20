@@ -8,9 +8,8 @@
  */
 int main(void)
 {
-	_printf("%!\n");
-	_printf("%K\n");
-	_ptintf("\n");
+	
+	
 
 	return (0);
 }

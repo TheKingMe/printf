@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 				if (func)
 					count += func(args);
 				else
-					return (-1);
+					_putchar(format[i]), _putchar(format[i + 1]);
 				va_end(args_copy);
 				i++;
 			}
