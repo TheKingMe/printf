@@ -47,6 +47,7 @@ int rp_int(va_list args)
 {
 int d = 1, i, r, count = 0;
 int n = va_arg(args, int);
+
 if (n < 0)
 {
 	_putchar('-');
