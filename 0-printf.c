@@ -6,9 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	int j;
-	int count = 0;
+	int i = 0, j, count = 0;
 	va_list args;
 
 	va_start(args, format);
@@ -21,28 +19,29 @@ int _printf(const char *format, ...)
 			_write(format[i]);
 			i++;
 			count++;
-			continue;
 		}
-		if (format[i + 1] == '%')
+		else if (format[i + 1] == '%')
 		{
 			_write('%');
 			count++;
 			i += 2;
-			continue;
 		}
-		if (format[i + 1] == '\0')
-			return (-1);
-		j = change(format[i + 1], args);
-		if (j == -1 || j != 0)
-			i++;
-		if (j > 0)
-			count += j;
-		if (j == 0)
+		else if (format[i + 1] == '\0')
 		{
-			_write('%');
-			count++;
+			va_end(args);
+			return (-1);
 		}
-		i++;
+		else
+		{
+			j = change(format[i + 1], args);
+			if (j == -1 || j != 0)
+				i++;
+			if (j > 0)
+				count += j;
+			if (j == 0)
+				_write('%'), count++;
+			i++;
+		}
 	}
 	va_end(args);
 	return (count);
