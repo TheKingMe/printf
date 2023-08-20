@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == '\0')
 				return (-1);
 			if (format[i + 1] == '%')
-				_putchar('%'), i++;
+				_write('%'), i++;
 			else
 			{
 				int (*func)(va_list);
@@ -30,13 +30,13 @@ int _printf(const char *format, ...)
 				if (func)
 					count += func(args);
 				else
-					_putchar(format[i]), _putchar(format[i + 1]);
+					_write(format[i]), _write(format[i + 1]);
 				va_end(args_copy);
 				i++;
 			}
 		}
 		else
-			_putchar(format[i]), count++;
+			_write(format[i]), count++;
 		i++;
 	}
 	va_end(args);

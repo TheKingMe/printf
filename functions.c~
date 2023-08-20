@@ -8,7 +8,7 @@ int rp_char(va_list args)
 {
 int count = 0;
 char c = va_arg(args, int);
-_putchar(c);
+_write(c);
 count++;
 return (count);
 }
@@ -24,7 +24,7 @@ char *str;
 str = va_arg(args, char *);
 while (*str != 0)
 {
-_putchar(*str);
+_write(*str);
 str++;
 count++;
 }
@@ -37,7 +37,7 @@ return (count);
 **/
 int rp_pourcentage(va_list args)
 {
-_putchar('%');
+_write('%');
 return (1);
 }
 /**

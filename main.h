@@ -17,7 +17,7 @@ typedef struct func
 	int (*ptr)(va_list);
 
 } fc;
-int _putchar(char c);
+int _write(char c);
 int rp_char(va_list args);
 int rp_string(va_list args);
 int rp_int(va_list args);
