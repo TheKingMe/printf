@@ -46,10 +46,4 @@ i++;
 va_end(args);
 return (count);
 }
-int main()
 
-{
-	int i =-6253764;
-	_printf("%d+%i+%d+%i+%d\n",i,44,4.4,22,44);
-	return 0;
-}
