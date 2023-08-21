@@ -54,3 +54,36 @@ int rp_oct(va_list args)
 	count = binary_oct(b, 8);
 	return (count);
 }
+/**
+ *rp_STRING - For s
+ *@args: from list
+ *Return: count
+ **/
+int rp_STRING(va_list args)
+{
+	int count, i;
+	char *str;
+
+	str = va_arg(args, char *);
+	for (i = 0; str[i]; i++)
+	{
+	if (str[i] < 32 || str[i] >= 127)
+	{
+		_write('\\');
+		_write('x');
+		if (str[i] <= 15)
+		{
+		_write('0' + 0);
+		count++;
+		}
+		count += hexa(str[i], 16, 1);
+		count += 2;
+		continue;
+
+	}
+	_write(str[i]);
+	count++;
+	}
+
+	return (count);
+}
