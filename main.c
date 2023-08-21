@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	int len, len2, x, y;
+	int len, len2, x;
 
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");
@@ -19,8 +19,6 @@ int main(void)
 	printf("String:[%s]\n", "I am a string !");
 	x = _printf("%b", -98);
 	printf("\n");
-	y = printf("%b", -98);
 	printf("%d\n", x);
-	printf("%d", y);
 	return (0);
 }

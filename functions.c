@@ -64,10 +64,10 @@ int rp_int(va_list args)
  * @b: positive integer
  * Return: return the value in binary
  */
-int binary_2(unsigned int b)
+int binary_2(int b)
 {
 	int r, count;
-
+	
 	if (b == 0)
 		return (0);
 	r = b % 2;
@@ -83,10 +83,16 @@ int binary_2(unsigned int b)
  */
 int rp_binary(va_list args)
 {
-	int count = 0;
-	unsigned int b = va_arg(args, int);
-
+	int count = 0, j = 0;
+	int b = va_arg(args, int);
+	if(b < 0)
+	{
+	b *= -1;
+	_write('0'+1);
+	j++;
+	}
 	count = binary_2(b);
-
+	if (j == 1)
+	count++;
 	return (count);
 }
