@@ -2,7 +2,7 @@
 
 int main()
 {
-    int len, len2;
+    int len, len2,x,y;
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     _printf("Length:[%d, %i]\n", len, len);
@@ -13,6 +13,10 @@ int main()
     printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
-    printf(NULL);
+    x = _printf("%b",-98);
+    printf("\n");
+    y = printf("%b",-98);
+    printf("%d\n",x);
+    printf("%d",y);
     return 0;
 }

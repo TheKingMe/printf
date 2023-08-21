@@ -12,6 +12,7 @@ int change(char s, va_list args)
 		{"s", rp_string},
 		{"d", rp_int},
 		{"i", rp_int},
+		{"b", rp_binary},
 		{NULL, NULL}};
 	int i = 0;
 

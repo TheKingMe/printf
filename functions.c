@@ -59,3 +59,34 @@ int rp_int(va_list args)
 	}
 	return (count);
 }
+/**
+ * binary_2 - switch a number from decimal to binary
+ * @b: positive integer
+ * Return: return the value in binary 
+*/
+int binary_2(unsigned int b)
+{
+	int r, count;
+
+	if (b == 0)
+		return (0);
+	r = b % 2;
+	count = binary_2(b / 2);
+
+	_write(r + '0');
+	return (count + 1);
+
+/**
+ * rp_binary - switch a number from decimal to binary
+ * @args: the argument passed in printf
+ * Return: return the count 
+*/}
+int rp_binary(va_list args)
+{
+	int count = 0;
+	unsigned int b = va_arg(args, int);
+
+	count = binary_2(b);
+
+	return (count);
+}
