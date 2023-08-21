@@ -62,28 +62,27 @@ int rp_oct(va_list args)
 int rp_STRING(va_list args)
 {
 	int count, i;
-	char *str;
+	char *str = va_arg(args, char *);
+	if (str == NULL)
+	str = "(null)";
+	else if (*str == '\0')
+	return (-1);
 
-	str = va_arg(args, char *);
 	for (i = 0; str[i]; i++)
 	{
-	if (str[i] < 32 || str[i] >= 127)
+	if ((str[i] < 32 && str[i] > 0) || str[i] >= 127)
 	{
 		_write('\\');
 		_write('x');
 		if (str[i] <= 15)
 		{
-		_write('0' + 0);
+		_write('0');
 		count++;
 		}
-		count += hexa(str[i], 16, 1);
-		count += 2;
-		continue;
-
-	}
+		_write(hexa(str[i], 16, 1));
+	}else 
 	_write(str[i]);
-	count++;
 	}
 
-	return (count);
+	return (i);
 }

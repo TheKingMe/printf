@@ -30,6 +30,7 @@ int main(void)
     _printf("%x\n", 0);
     printf("%X\n", 0);
     _printf("%X\n", 0);
-	_printf("%S\n", "Best \n School");
+	_printf("%S\n", "Best School");
+	
 	return (0);
 }
