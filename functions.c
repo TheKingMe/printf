@@ -6,13 +6,7 @@
  **/
 int rp_char(va_list args)
 {
-	int count = 0;
-	char c;
-
-	c = va_arg(args, int);
-	_write(c);
-	count++;
-	return (count);
+return (_write(va_arg(args, int)));
 }
 /**
  *rp_string - For s
