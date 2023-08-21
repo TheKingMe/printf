@@ -15,22 +15,19 @@ return (_write(va_arg(args, int)));
  **/
 int rp_string(va_list args)
 {
-	int count = 0;
+	int count;
 	char *str;
 
 	str = va_arg(args, char *);
-	if (str == NULL)
-	{
-		write(1, "(null)", 6);
-		return (6);
-	}
-	while (*str != 0)
-	{
-		_write(*str);
-		str++;
-		count++;
-	}
-	return (count);
+if (str == NULL)
+	str = "(null)";
+else if (*str == '\0')
+	return (-1);
+
+for (count = 0; str[count]; count++)
+	_write(str[count]);
+
+return (count);
 }
 /**
 *rp_int - for numbers
