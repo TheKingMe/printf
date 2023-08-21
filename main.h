@@ -10,7 +10,7 @@ int _printf(const char *format, ...);
  * struct func - struct
  * @c: pointer to string
  * @ptr: pointer to function
-*/
+ */
 typedef struct func
 {
 	char *c;

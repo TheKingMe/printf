@@ -6,7 +6,7 @@
  **/
 int rp_char(va_list args)
 {
-return (_write(va_arg(args, int)));
+	return (_write(va_arg(args, int)));
 }
 /**
  *rp_string - For s
@@ -19,42 +19,43 @@ int rp_string(va_list args)
 	char *str;
 
 	str = va_arg(args, char *);
-if (str == NULL)
-{	write(1, "(null)", 6);
-	return (6);
-}
-else if (str[0] == '\0')
-	return (-1);
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	else if (str[0] == '\0')
+		return (-1);
 
-for (count = 0; str[count]; count++)
-	_write(str[count]);
+	for (count = 0; str[count]; count++)
+		_write(str[count]);
 
-return (count);
+	return (count);
 }
 /**
-*rp_int - for numbers
-*@args: arg
-*Return: count
-*/
+ *rp_int - for numbers
+ *@args: arg
+ *Return: count
+ */
 int rp_int(va_list args)
 {
-unsigned int d = 1, i, r, count = 0;
-int n = va_arg(args, int);
+	unsigned int d = 1, i, r, count = 0;
+	int n = va_arg(args, int);
 
-if (n < 0)
-{
-	_write('-');
-	count++;
-	n *= -1;
-}
+	if (n < 0)
+	{
+		_write('-');
+		count++;
+		n *= -1;
+	}
 
-for (i = 0; n / d > 9; i++, d *= 10)
-;
+	for (i = 0; n / d > 9; i++, d *= 10)
+		;
 
-for (; d >= 1; n %= d, d /= 10, count++)
-{
-	r = n / d;
-	_write('0' + r);
-}
-return (count);
+	for (; d >= 1; n %= d, d /= 10, count++)
+	{
+		r = n / d;
+		_write('0' + r);
+	}
+	return (count);
 }
