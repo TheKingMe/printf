@@ -22,6 +22,8 @@ int rp_char(va_list args);
 int rp_string(va_list args);
 int rp_int(va_list args);
 int rp_binary(va_list args);
-int binary_2(unsigned int b);
+int binary_oct(unsigned int b,unsigned int a);
+int rp_u_int(va_list args);
+int rp_oct(va_list args);
 int change(char s, va_list args);
 #endif

@@ -20,5 +20,6 @@ int main(void)
 	x = _printf("%b",-98);
 	printf("\n");
 	printf("%d\n", x);
+	printf("%o",-4);
 	return (0);
 }
