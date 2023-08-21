@@ -69,8 +69,10 @@ int binary_2(unsigned int b)
 	int r, count;
 	
 	if (b == 0)
+	{
 	_write('0'+0);
 	return (1);
+	}
 	r = b % 2;
 	count = binary_2(b / 2);
 
