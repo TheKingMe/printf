@@ -21,5 +21,5 @@ int change(char s, va_list args)
 			return (specific[i].ptr(args));
 		i++;
 	}
-	return (0);
+	return (-1);
 }
