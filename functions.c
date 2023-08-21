@@ -70,7 +70,6 @@ int binary_2(unsigned int b)
 	
 	if (b == 0)
 	{
-	_write('0'+0);
 	return (1);
 	}
 	r = b % 2;
