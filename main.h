@@ -25,5 +25,9 @@ int rp_binary(va_list args);
 int binary_oct(unsigned int b,unsigned int a);
 int rp_u_int(va_list args);
 int rp_oct(va_list args);
+int hexa(unsigned int b, unsigned int a,int c);
+int rp_hexa(va_list args);
+int rp_HEXA(va_list args);
+
 int change(char s, va_list args);
 #endif

@@ -20,6 +20,15 @@ int main(void)
 	x = _printf("%b",-98);
 	printf("\n");
 	printf("%d\n", x);
-	printf("%o",-4);
+	_printf("%o",4);
+    printf("\n");
+	printf("%o",4);
+    printf("\n");
+    _printf("%u\n",-140);
+    printf("%u\n",-140);
+    printf("%x\n",0);
+    _printf("%x\n",0);
+    printf("%X\n",0);
+    _printf("%X\n",0);
 	return (0);
 }

@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * binary_oct - switch a number from decimal to binary
+ * binary_oct - switch a number from decimal to binary or octal
  * @b: positive integer
- * @a: /
+ * @a: base
  * Return: return the value in binary
  */
 int binary_oct(unsigned int b, unsigned int a)
-	{
+{
 	int r, count;
 
 	if (b == 0)
@@ -24,7 +24,7 @@ int binary_oct(unsigned int b, unsigned int a)
  * Return: return the count
  */
 int rp_binary(va_list args)
-	{
+{
 	int count = 0;
 	unsigned int b = va_arg(args, int);
 
@@ -42,7 +42,7 @@ int rp_binary(va_list args)
  * Return: return the count
  */
 int rp_oct(va_list args)
-	{
+{
 	int count = 0;
 	unsigned int b = va_arg(args, int);
 
