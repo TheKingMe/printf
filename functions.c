@@ -67,10 +67,10 @@ int rp_int(va_list args)
 int binary_2(unsigned int b)
 {
 	int r, count;
-	
+
 	if (b == 0)
 	{
-	return (1);
+		return (1);
 	}
 	r = b % 2;
 	count = binary_2(b / 2);
@@ -85,8 +85,14 @@ int binary_2(unsigned int b)
  */
 int rp_binary(va_list args)
 {
-	int count = 0; 
+	int count = 0;
 	unsigned int b = va_arg(args, int);
+
+	if (b == 0)
+	{
+		_write('0');
+		return (1);
+	}
 	count = binary_2(b);
 	return (count);
 }
