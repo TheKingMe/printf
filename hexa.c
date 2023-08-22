@@ -91,29 +91,30 @@ int rp_reverse(va_list args)
 	}
 	return (count);
 }
-/*
-*rp_rot13 - code rot13
-*@args: arg
-*Return: count
+/**
+ * rp_rot13 - prints the rot13 string
+ * @args: argument
+ * Return: return count
 */
 int rp_rot13(va_list args)
 {
 	char *str = va_arg(args, char *);
 	char A[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-char B[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-int i, j;
+	char B[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	int i, j;
 	int count = 0;
-for (i = 0; str[i] != 0; i++)
-{
-        for (j = 0; j < 52; j++)
-        {
-            if (str[i] == A[j])
-            {
+
+	for (i = 0; str[i] != 0; i++)
+	{
+		for (j = 0; j < 52; j++)
+		{
+			if (str[i] == A[j])
+			{
 				_write(B[j]);
-                count++;
+				count++;
 				break;
-            }
-        }
-    }
-    return (count);
+			}
+		}
+	}
+	return (count);
 }
