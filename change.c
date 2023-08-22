@@ -30,3 +30,27 @@ int change(char s, va_list args)
 	}
 	return (0);
 }
+int flags(const char *s, int i)
+{
+	int count = 0;
+if (s[i] == ' ')
+{
+_write(s[i]);
+for (;s[i] != '\0';i++)
+{
+if(s[i] != ' ')
+break;
+count++;
+}
+return count;
+}
+if (s[i] == '+')
+{
+	if (s[i + 1] == 'd')
+	{
+		
+	}
+}
+
+return (0);
+}

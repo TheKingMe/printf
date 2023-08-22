@@ -36,7 +36,9 @@ int main(void)
     b = _printf("%p","alaa");
     printf("%d",a);
     printf("\n");
-    printf("%d",b);
+    printf("%d\n",b);
+    printf("%+d",-5);
+
 
     return (0);
 }

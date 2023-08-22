@@ -33,6 +33,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+		 i += flags(format, i);
 			j = change(format[i + 1], args);
 			if (j == -1 || j != 0)
 				i++;
