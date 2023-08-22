@@ -17,19 +17,20 @@ int main(void)
 	printf("Character:[%c]\n", 'H');
 	_printf("String:[%s]\n", "I am a string !");
 	printf("String:[%s]\n", "I am a string !");
-	x = _printf("%b",-98);
+	x = _printf("%b", -98);
 	printf("\n");
 	printf("%d\n", x);
-	_printf("%o",4);
-    printf("\n");
-	printf("%o",4);
-    printf("\n");
-    _printf("%u\n",-140);
-    printf("%u\n",-140);
-    printf("%x\n",0);
-    _printf("%x\n",0);
-    printf("%X\n",0);
-    _printf("%X\n",0);
-	_printf("%S\n", "Best \n School");
+	_printf("%o", 4);
+     printf("\n");
+ 	 printf("%o", 4);
+     printf("\n");
+    _printf("%u\n", -140);
+    printf("%u\n", -140);
+    printf("%x\n", 0);
+    _printf("%x\n", 0);
+    printf("%X\n", 0);
+    _printf("%X\n", 0);
+	_printf("%S\n", "Best School");
+	
 	return (0);
 }

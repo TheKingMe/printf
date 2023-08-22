@@ -62,9 +62,13 @@ int rp_oct(va_list args)
 int rp_STRING(va_list args)
 {
 	int count, i;
-	char *str;
+	char *str = va_arg(args, char *);
 
-	str = va_arg(args, char *);
+	if (str == NULL)
+	str = "(null)";
+	else if (*str == '\0')
+	return (-1);
+
 	for (i = 0; str[i]; i++)
 	{
 		if (str[i] < 32 || str[i] >= 127)
@@ -86,5 +90,5 @@ int rp_STRING(va_list args)
 		}
 	}
 
-	return (count);
+	return (i);
 }
