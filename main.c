@@ -6,6 +6,8 @@
 int main(void)
 {
     int len, len2, x;
+    int *z;
+    int y = 20;
 
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
@@ -30,7 +32,11 @@ int main(void)
     _printf("%x\n", 0);
     printf("%X\n", 0);
     _printf("%X\n", 0);
-    _printf("% s\n", "valid format");
+    z = &y;
+    printf("%p",z);
+    printf("\n");
+    _printf("%p",z);
+
 
     return (0);
 }

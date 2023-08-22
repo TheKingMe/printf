@@ -97,7 +97,6 @@ int rp_pointer(va_list args)
 {
 	void *p = va_arg(args, void *);
 	int count = 0;
-	unsigned int x = (unsigned int) p;
 	_write('0');
 	_write('x');
 	if (p == NULL)
@@ -105,8 +104,7 @@ int rp_pointer(va_list args)
 		_write('0');
 		return (3);
 	}
-	count += hexa(x, 16, 0) + 2;
+	count += hexa((unsigned int)(uintptr_t)p, 16, 0) + 2;
 
 	return (count);
 }
-
