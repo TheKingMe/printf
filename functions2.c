@@ -63,6 +63,7 @@ int rp_STRING(va_list args)
 {
 	int count, i;
 	char *str = va_arg(args, char *);
+
 	if (str == NULL)
 	str = "(null)";
 	else if (*str == '\0')
@@ -80,7 +81,7 @@ int rp_STRING(va_list args)
 		count++;
 		}
 		_write(hexa(str[i], 16, 1));
-	}else 
+	} else
 	_write(str[i]);
 	}
 
