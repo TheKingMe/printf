@@ -113,14 +113,23 @@ int rp_rot13(va_list args)
 		return (-1);
 	for (i = 0; str[i] != 0; i++)
 	{
+		char current = str[i];
+		int alpha = 0;
 		for (j = 0; j < 52; j++)
 		{
-			if (str[i] == A[j])
+			if (current == A[j])
 			{
 				_write(B[j]);
 				count++;
+				alpha = 1;
 				break;
 			}
+			
+		}
+		if(!alpha)
+		{
+			_write(current);
+			count++;
 		}
 	}
 	return (count);

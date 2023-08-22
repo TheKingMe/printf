@@ -29,7 +29,7 @@ int main(void)
     printf("%x\n", 0);
     _printf("%x\n", 0);
     printf("%X\n", 0);
-    _printf("%X\n", 0);
+    _printf("%R\n", "ilyas10alaa");
 
     _printf("%R","i");
 
