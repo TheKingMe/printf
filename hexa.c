@@ -59,7 +59,36 @@ int rp_HEXA(va_list args)
 	count = hexa(b, 16, 1);
 	return (count);
 }
+/**
+ * rp_reverse - reverse a string
+ * @args: argument
+ * Return: return count
+ */
 int rp_reverse(va_list args)
 {
-	
+	int count = 0;
+	char *str;
+
+	str = va_arg(args, char *);
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	else if (str[0] == '\0')
+		return (-1);
+
+	while (*str)
+	{
+		str++;
+		count++;
+	}
+	str--;
+	while (*str)
+	{
+		_write(*str);
+		str--;
+	}
+	_write(0);
+	return (count);
 }

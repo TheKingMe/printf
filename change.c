@@ -20,7 +20,6 @@ int change(char s, va_list args)
 		{"S", rp_STRING},
 		{"p", rp_pointer},
 		{"r", rp_reverse},
-		{"R",rp_rot13},
 		{NULL, NULL}};
 	int i = 0;
 
