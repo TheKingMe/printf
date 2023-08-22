@@ -30,7 +30,7 @@ int main(void)
     _printf("%x\n", 0);
     printf("%X\n", 0);
     _printf("%X\n", 0);
-	_printf("%S\n", "Best School");
-	
+	len2 = _printf("%S\n", "Best Š		School");
+	printf("%d",len2);
 	return (0);
 }
