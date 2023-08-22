@@ -93,10 +93,16 @@ int rp_STRING(va_list args)
 
 	return (count);
 }
+/**
+ * rp_pointer - give the address of argument
+ * @args: argument
+ * Return: return address
+*/
 int rp_pointer(va_list args)
 {
 	void *p = va_arg(args, void *);
 	int count = 0;
+
 	_write('0');
 	_write('x');
 	if (p == NULL)
