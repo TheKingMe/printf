@@ -93,24 +93,35 @@ int rp_STRING(va_list args)
 
 	return (count);
 }
+
 /**
  * rp_pointer - give the address of argument
  * @args: argument
  * Return: return address
-*/
+ */
 int rp_pointer(va_list args)
 {
 	void *p = va_arg(args, void *);
 	int count = 0;
+	uintptr_t x;
+
+	if (p == NULL)
+	{
+		write(1, "(nil)", 5);
+		return 5;
+	}
 
 	_write('0');
 	_write('x');
-	if (p == NULL)
-	{
-		_write('0');
-		return (3);
-	}
-	count += hexa((unsigned int)(uintptr_t)p, 16, 0) + 2;
 
-	return (count);
+	x = (uintptr_t)p;
+
+	
+	hexa((unsigned int)(x / (16 * 16 * 16 * 16)), 16, 0);
+
+	
+	count += hexa((unsigned int)x, 16, 0);
+
+	count += 2;
+	return count;
 }

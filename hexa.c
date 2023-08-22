@@ -5,7 +5,7 @@
  * @a:base
  * @c:checks if we want to convert the number to hexadecimal
  * Return: return count
-*/
+ */
 int hexa(unsigned int b, unsigned int a, int c)
 {
 	int r, count;
@@ -45,7 +45,7 @@ int rp_hexa(va_list args)
  * rp_HEXA - from decimal to hexadecimal with uppercases
  * @args: argument passed in printf
  * Return: return count
-*/
+ */
 int rp_HEXA(va_list args)
 {
 	int count = 0;
