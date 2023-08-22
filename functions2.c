@@ -63,27 +63,33 @@ int rp_STRING(va_list args)
 {
 	int i;
 	char *str = va_arg(args, char *);
+	int count = 0;
 
 	if (str == NULL)
-	str = "(null)";
+		str = "(null)";
 	else if (*str == '\0')
-	return (-1);
+		return (-1);
 
 	for (i = 0; str[i]; i++)
 	{
-	if ((str[i] < 32 && str[i] >= 0) || str[i] >= 127)
-	{
-		_write('\\');
-		_write('x');
-		if (str[i] <= 15)
+		if ((str[i] < 32 && str[i] > 0) || str[i] >= 127)
 		{
-		_write('0');
+			_write('\\');
+			_write('x');
+			if (str[i] <= 15)
+			{
+				_write('0');
+			}
+			_write(hexa(str[i], 16, 1));
+			count += 4;
 		}
-		_write(hexa(str[i], 16, 1));
-	} else
-	
-	_write(str[i]);
+		else
+
+		{
+			_write(str[i]);
+			count++;
+		}
 	}
 
-	return (i);
+	return (count);
 }
