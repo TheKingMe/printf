@@ -71,7 +71,7 @@ int rp_STRING(va_list args)
 
 	for (i = 0; str[i]; i++)
 	{
-	if ((str[i] < 32 && str[i] > 0) || str[i] >= 127)
+	if ((str[i] < 32 && str[i] >= 0) || str[i] >= 127)
 	{
 		_write('\\');
 		_write('x');
