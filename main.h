@@ -33,5 +33,6 @@ int rp_HEXA(va_list args);
 int rp_STRING(va_list args);
 int rp_pointer(va_list args);
 int rp_reverse(va_list args);
+int rp_rot13(va_list args);
 int change(char s, va_list args);
 #endif

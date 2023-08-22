@@ -6,7 +6,6 @@
 int main(void)
 {
     int len, len2, x;
-    int a,b,f;
 
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
@@ -31,19 +30,8 @@ int main(void)
     _printf("%x\n", 0);
     printf("%X\n", 0);
     _printf("%X\n", 0);
-    a = printf("%p","alaa");
-    printf("\n");
-    b = _printf("%p","alaa");
-    printf("%d",a);
-    printf("\n");
-    printf("%#            x\n",b);
-    printf("\n");
-    printf("%         sirjfv\n","ilyas");
-    f = _printf("ilyas %r","ilyas");
-    printf("\n");
-    printf("%d",f);
-    printf("\n");
-    printf("%+d",-5);
+
+    _printf("%R","ilyas");
 
 
     return (0);

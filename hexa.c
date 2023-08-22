@@ -91,3 +91,24 @@ int rp_reverse(va_list args)
 	}
 	return (count);
 }
+int rp_rot13(va_list args)
+{
+	char *str = va_arg(args, char *); 
+ char A[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    char B[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+    int i, j;
+	int count;
+    for (i = 0; str[i] != 0; i++)
+    {
+        for (j = 0; j < 52; j++)
+        {
+            if (str[i] == A[j])
+            {
+				_write(B[j]);
+                count++;
+				break;
+            }
+        }
+    }
+    return (count);
+}
