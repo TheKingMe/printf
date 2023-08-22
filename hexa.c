@@ -95,7 +95,7 @@ int rp_reverse(va_list args)
  * rp_rot13 - prints the rot13 string
  * @args: argument
  * Return: return count
-*/
+ */
 int rp_rot13(va_list args)
 {
 	char *str = va_arg(args, char *);
@@ -109,7 +109,8 @@ int rp_rot13(va_list args)
 		write(1, "(null)", 6);
 		return (6);
 	}
-
+	else if (str[0] == '\0')
+		return (-1);
 	for (i = 0; str[i] != 0; i++)
 	{
 		for (j = 0; j < 52; j++)
