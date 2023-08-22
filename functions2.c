@@ -93,3 +93,20 @@ int rp_STRING(va_list args)
 
 	return (count);
 }
+int rp_pointer(va_list args)
+{
+	void *p = va_arg(args, void *);
+	int count = 0;
+	unsigned int x = (unsigned int) p;
+	_write('0');
+	_write('x');
+	if (p == NULL)
+	{
+		_write('0');
+		return (3);
+	}
+	count += hexa(x, 16, 0) + 2;
+
+	return (count);
+}
+

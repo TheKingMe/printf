@@ -18,6 +18,7 @@ int change(char s, va_list args)
 		{"x", rp_hexa},
 		{"X", rp_HEXA},
 		{"S", rp_STRING},
+		{"p", rp_pointer},
 		{NULL, NULL}};
 	int i = 0;
 
