@@ -65,9 +65,12 @@ int rp_STRING(va_list args)
 	char *str = va_arg(args, char *);
 
 	if (str == NULL)
-	str = "(null)";
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	else if (*str == '\0')
-	return (-1);
+		return (-1);
 
 	for (i = 0; str[i]; i++)
 	{
