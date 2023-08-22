@@ -104,6 +104,12 @@ int rp_rot13(va_list args)
 	int i, j;
 	int count = 0;
 
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+
 	for (i = 0; str[i] != 0; i++)
 	{
 		for (j = 0; j < 52; j++)

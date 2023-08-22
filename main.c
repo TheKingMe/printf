@@ -31,7 +31,7 @@ int main(void)
     printf("%X\n", 0);
     _printf("%X\n", 0);
 
-    _printf("%R","ilyas");
+    _printf("%R","i");
 
 
     return (0);
