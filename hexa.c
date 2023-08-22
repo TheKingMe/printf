@@ -3,7 +3,7 @@
  * hexa- switch from decimal to hexadecimal
  * @b:number
  * @a:base
- * @c:checks if we want to convert the number to hexadecimal with uppercase or lowercase
+ * @c:checks if we want to convert the number to hexadecimal
  * Return: return count
 */
 int hexa(unsigned int b, unsigned int a, int c)
@@ -24,7 +24,7 @@ int hexa(unsigned int b, unsigned int a, int c)
 	return (count + 1);
 }
 /**
- * rp_binary - switch a number from decimal to binary
+ * rp_hexa - switch a number from decimal to hexadecimal
  * @args: the argument passed in printf
  * Return: return the count
  */
