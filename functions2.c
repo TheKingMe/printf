@@ -104,24 +104,21 @@ int rp_pointer(va_list args)
 	void *p = va_arg(args, void *);
 	int count = 0;
 	uintptr_t x;
+	uintptr_t y;
 
 	if (p == NULL)
 	{
 		write(1, "(nil)", 5);
-		return 5;
+		return (5);
 	}
-
 	_write('0');
 	_write('x');
 
 	x = (uintptr_t)p;
-
-	
-	hexa((unsigned int)(x / (16 * 16 * 16 * 16)), 16, 0);
-
-	
-	count += hexa((unsigned int)x, 16, 0);
-
+	y = (uintptr_t)p;
+	x = x / 16;
+	count += hexa((unsigned int)(x / (16 * 16 * 16 * 16 * 16 * 16 * 16)), 16, 0);
+	count += hexa((unsigned int)(y), 16, 0);
 	count += 2;
-	return count;
+	return (count);
 }
