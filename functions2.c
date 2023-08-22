@@ -79,9 +79,9 @@ int rp_STRING(va_list args)
 			if (str[i] <= 15)
 			{
 				_write('0');
+				count++;
 			}
-			_write(hexa(str[i], 16, 1));
-			count += 4;
+			count += 2 + hexa(str[i], 16, 1);
 		}
 		else
 

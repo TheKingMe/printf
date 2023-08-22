@@ -1,4 +1,5 @@
 #include "main.h"
+#include <wchar.h>
 /**
  * main -test function
  * Return: return 0
@@ -6,6 +7,10 @@
 int main(void)
 {
     int len, len2, x, z;
+    wchar_t wide_string1[] = L"Hello, 你好, नमस्ते";
+    wchar_t wide_string2[] = L"";
+    wchar_t wide_string3[] = L"\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F\x10";
+
 
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
@@ -32,6 +37,13 @@ int main(void)
     _printf("%X\n", 0);
     z = _printf("%S\n", "Best\nSchool");
     _printf("%d\n", z);
+
+    _printf("Wide string 1: %S\n", wide_string1);
+    _printf("Wide string 2: %S\n", wide_string2);
+    _printf("Wide string 3: %S\n", wide_string3);
+    printf("Wide string 1: %S\n", wide_string1);
+    printf("Wide string 2: %S\n", wide_string2);
+    printf("Wide string 3: %S\n", wide_string3);
 
     return (0);
 }
