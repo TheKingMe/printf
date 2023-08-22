@@ -97,7 +97,7 @@ int rp_rot13(va_list args)
  char A[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     char B[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
     int i, j;
-	int count;
+	int count = 0;
     for (i = 0; str[i] != 0; i++)
     {
         for (j = 0; j < 52; j++)
