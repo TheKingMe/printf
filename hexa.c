@@ -89,6 +89,5 @@ int rp_reverse(va_list args)
 		_write(*str);
 		str--;
 	}
-	_write(0);
 	return (count);
 }
