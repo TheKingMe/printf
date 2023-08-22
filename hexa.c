@@ -59,3 +59,7 @@ int rp_HEXA(va_list args)
 	count = hexa(b, 16, 1);
 	return (count);
 }
+int rp_reverse(va_list args)
+{
+	
+}

@@ -36,7 +36,10 @@ int main(void)
     b = _printf("%p","alaa");
     printf("%d",a);
     printf("\n");
-    printf("%d\n",b);
+    printf("%#            x\n",b);
+    printf("\n");
+    printf("%         sirjfv\n","ilyas");
+    printf("irjfv%     c",'c');
     printf("%+d",-5);
 
 
